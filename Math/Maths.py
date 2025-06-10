@@ -1,0 +1,5 @@
+print(abs(-10))
+print(pow(3,2))
+print(sqrt(9))
+print(max(89,12))
+print(min(89,12))
