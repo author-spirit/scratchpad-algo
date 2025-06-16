@@ -1,0 +1,16 @@
+stack = [5,4,3,2,1]
+aux = []
+def do_reverse(stack):
+    if not stack:
+        return
+    
+    num = stack.pop()
+    do_reverse(stack)
+
+    if not stack:
+        stack.append(num)
+    
+
+print("Before", stack)
+do_reverse(stack)
+print("After", stack)
