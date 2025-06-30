@@ -1,5 +1,5 @@
 x = 2.00
-n=-20
+n=-2
 
 def pow(x,n):
     print("N: ", n)
@@ -7,13 +7,19 @@ def pow(x,n):
         return 1
     
     is_neg = n < 0
-    
     # Solve n/2 half and supply
 
     if is_neg:
-        return (1/x) * pow(x,n+1)
+        x = (1/x)
+        n = -n
+    
+    half = pow(x,n//2)
 
-    return x * pow(x,n-1)
+    # for odd number the number gets left out
+    if n % 2 ==0:
+        return half * half
+
+    return half * half * x
 
 
 print(f"Before : {x}")
