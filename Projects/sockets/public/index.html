@@ -14,10 +14,15 @@
             });
             sio.on('connect', ()=>{
                 console.log("Connected")
+                sio.emit("message", {"text": "Hey I am client."})
             });
 
             sio.on('disconnect', ()=>{
                 console.log("Disconnected")
+            })
+
+            sio.on("server_message", (data)=>{
+                console.log("Message from Server", data)
             })
 
         </script>
