@@ -8,6 +8,7 @@ app = socketio.ASGIApp(sio, static_files={
 @sio.event
 async def connect(sid, environ):
     print("Connected to ", sid)
+    await sio.emit("server_message", "Guys!! New one joined.. "+ sid, skip_sid=sid)
 
 @sio.event
 async def disconnect(sid):
