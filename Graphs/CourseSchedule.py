@@ -28,7 +28,7 @@ def is_cyclic(node):
         if is_cyclic(_node):
             return True
 
-    # Deleting current node from visited as other node treak it like cyclic
+    # Deleting current node from visited set as other node treat it like cyclic
     # Keep the current node adjlist empty to prevent multiple DFS scan on same node
     visited.remove(node)
     adj[node] = []
