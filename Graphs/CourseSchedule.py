@@ -62,7 +62,7 @@ def kahns(numCourses: int, prerequisites):
         
         stack.append(node)
 
-    print(stack)
+    print("TopoSort", stack)
     return len(stack) == numCourses
 
 prereq = [[0,1], [0,2], [1,3], [1,4], [3,4]]
@@ -70,7 +70,9 @@ prereq=[[1,0],[0,1]]
 n=5
 
 # Naive DFS approach
-print("Can finish the course? ", can_finish(n,prereq))
+print("Naive DFS Approach:\nCan finish the course? ", can_finish(n,prereq))
+print()
 
 # Using Topological Sorting (Kahn's)
-print("Can Finish?",kahns(n,prereq)) 
+print("Using Kahn's Approach:")
+print("Can Complete Course? ", kahns(n,prereq)) 
