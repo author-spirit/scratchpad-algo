@@ -55,11 +55,16 @@ while heap:
     # pop the smallest weighted element/node
     cur_dis, cur_node = heapq.heappop(heap)
 
+    # NOTE: check if entry is outdated and overtaken by better distance
+    if cur_dis != distance[cur_node]:
+        print(f"Node '{cur_node}' is outdated ({cur_dis})")
+        continue
+
     # new distance = min(nei_dis, cur_node_dis + nei_weight)
     # scan all neighbours, calculate distance and add to PriQ
     for v,wt in adj[cur_node]:
-        if cur_dis + wt < distance[v]:
-            new_distance = cur_dis + wt
+        new_distance = cur_dis + wt        
+        if new_distance < distance[v]:
             heapq.heappush(heap, (new_distance, v))
             distance[v] = new_distance
 
