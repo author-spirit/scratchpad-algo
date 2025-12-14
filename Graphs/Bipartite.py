@@ -2,6 +2,8 @@
 Name: Bipartite Graph
 Ref: https://leetcode.com/problems/is-graph-bipartite/description/
 Date: Nov 22, 2025
+
+Pattern: Graph Coloring using BFS to detect odd cycles
 """
 
 # graph = [[1,2,3],[0,2],[0,1,3],[0,2]]     # False
