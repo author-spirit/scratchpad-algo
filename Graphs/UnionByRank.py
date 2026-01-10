@@ -6,6 +6,8 @@ Functionalities:
 - Find the parent node
 - Union: Rank/Size
 
+Main Purpose: Join the smaller ranks to larger ranks.
+
 Requirments
 - Rank array, parent array
 
@@ -52,5 +54,6 @@ if __name__ == "__main__":
     unionFind.unionByRank(0, 4)
 
     # Print representatives
+    # Path compression
     for i in range(n):
         print(f'Element {i}: Representative = {unionFind.find(i)}')
